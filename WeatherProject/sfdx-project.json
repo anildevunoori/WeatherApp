@@ -1,0 +1,20 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "weatherappunlockpack",
+            "versionName": "ver 1.0",
+            "versionNumber": "1.0.0.NEXT"
+        }
+    ],
+    "name": "WeatherProject",
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "52.0",
+    "packageAliases": {
+        "weatherappunlockpack": "0Ho0o000000XZRICA4",
+        "weatherappunlockpack@1.0.0-1": "04t0o000003TizEAAS",
+        "weatherappunlockpack@1.0.0-2": "04t0o000003TizJAAS"
+    }
+}

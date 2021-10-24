@@ -1,0 +1,53 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1">
+            <span>
+                <lightning-card title="Fetch Historical Weather Data">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-align-bottom slds-size_1-of-8 slds-p-around_xxx-small">
+                        <lightning-input value={filterCityStr} onchange={filterCityNameChanged} label="Enter City" placeholder="City....">
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-align-bottom slds-size_1-of-8 slds-p-around_xxx-small">
+                        <lightning-input type="date" name="From" label="From" value={filterFromDate} onchange={filterFromDateChanged}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-align-bottom slds-size_1-of-8 slds-p-around_xxx-small">
+                        <lightning-input type="date" name="To" label="To" value={filterToDate} onchange={filterToDateChanged}></lightning-input>
+                    </div>            
+                    <div class="slds-col slds-align-bottom slds-size_1-of-8 slds-p-around_xxx-small">
+                        <lightning-button label="Search" onclick={getHistoricalData} >
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col slds-align-bottom slds-size_1-of-8">
+                        
+                    </div>
+                    <div class="slds-col slds-align-bottom slds-size_1-of-8">
+                        
+                    </div>
+                    <div class="slds-col slds-align-bottom slds-size_1-of-8">
+                        
+                    </div>
+                    <div class="slds-col slds-align-bottom slds-size_1-of-8">
+                        <template if:true={htabledatafound}>
+                            <c-generate-weather-pdf pdftabledata={htabledata} pdfcity={filterCityStr}></c-generate-weather-pdf>
+                        </template>
+                    </div>
+                </div>
+                </lightning-card>
+            </span>
+        </div>
+        <div class="slds-col slds-size_1-of-1">
+            <template if:true={htabledatafound}>
+                <lightning-datatable data={htabledata} columns={hcolumns} hide-checkbox-column	 key-field="id">
+                </lightning-datatable>
+            </template>
+        </div>
+        <div class="slds-col slds-size_1-of-1">
+            <span>
+                <template if:true={hnodata}>
+                    <lightning-card title={h404msg}></lightning-card>
+                </template>
+            </span>
+        </div>
+    </div>
+</template>

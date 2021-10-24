@@ -1,0 +1,35 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1">
+            <span>
+                <lightning-card title="Fetch Current Weather Data">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-align-bottom slds-size_1-of-8 slds-p-around_xxx-small">
+                        <lightning-input value={cwdcity} onchange={cityNameChanged} label="Enter City" placeholder="City....">
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-align-bottom slds-size_1-of-8 slds-p-around_xxx-small">
+                        <template if:true={cwdcityvalue}>
+                            <lightning-button label="Go..." onclick={getWeather} >
+                            </lightning-button>
+                        </template>
+                    </div>
+                </div>
+                </lightning-card>
+            </span>
+        </div>
+        <div class="slds-col slds-size_1-of-1">
+            <template if:true={cwdtabledatafound}>
+                <lightning-datatable data={cwdtabledata} columns={columns} hide-checkbox-column	 key-field="id">
+                </lightning-datatable>
+            </template>
+        </div>
+        <div class="slds-col slds-size_1-of-1">
+            <span>
+                <template if:true={cwdnodata}>
+                    <lightning-card title={city404msg}></lightning-card>
+                </template>
+            </span>
+        </div>
+    </div>
+</template>
