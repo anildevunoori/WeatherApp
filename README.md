@@ -10,4 +10,4 @@ to install the Released Unlocked version: https://login.salesforce.com/packaging
 
 to play with app, visit Public Community Page (Scratch Org: will be available for 30 days)
 https://sandbox-computing-speed-2707-dev-ed-17cb343ffe0.cs76.force.com/WeatherCommunity/s/weathercommunitypublicpage
-
+---------------------------------------------------------------------------------------------------------------
